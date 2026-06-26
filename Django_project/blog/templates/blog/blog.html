@@ -1,0 +1,33 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+
+{% for post in posts %}
+<div class="card shadow-sm mb-4 border-0">
+    <div class="card-body">
+
+        <div class="d-flex justify-content-between mb-2">
+            <small class="text-muted">
+                By {{ post.author }}
+            </small>
+
+            <small class="text-muted">
+                {{ post.date_posted }}
+            </small>
+        </div>
+
+        <h2 class="card-title text-primary">
+            {{ post.title }}
+        </h2>
+
+        <hr>
+
+        <p class="card-text">
+            {{ post.content }}
+        </p>
+
+    </div>
+</div>
+{% endfor %}
+
+{% endblock content %}
